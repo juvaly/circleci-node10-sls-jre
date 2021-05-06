@@ -1,4 +1,4 @@
-FROM circleci/node:lts
+FROM circleci/node:12.22.1
 MAINTAINER juvaly
 
 USER root
