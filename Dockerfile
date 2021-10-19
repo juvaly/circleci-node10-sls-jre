@@ -1,4 +1,4 @@
-FROM circleci/node:12.22.1
+FROM cimg/node:17.0.0
 MAINTAINER juvaly
 
 USER root
