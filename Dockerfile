@@ -10,7 +10,7 @@ RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y default-jre
 
-RUN apt-get install -y python-pip3 && \
+RUN apt-get install -y python-pip && \
     pip3 install awscli
 
 RUN npm install -g serverless \ 
