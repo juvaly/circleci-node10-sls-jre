@@ -1,4 +1,4 @@
-FROM cimg/node:17.0.0
+FROM cimg/node:18.17.1
 MAINTAINER juvaly
 
 USER root
@@ -13,15 +13,15 @@ RUN apt-get update && \
 RUN apt-get install -y python3-pip && \
     pip3 install awscli
 
-RUN npm install -g serverless@2.47.0 \ 
-    serverless-offline@7.0.0 \
-    serverless-webpack@5.5.1 \
-    serverless-prune-plugin@1.4.3 \
+RUN npm install -g serverless \ 
+    serverless-offline \
+    serverless-webpack \
+    serverless-prune-plugin \
     serverless-plugin-split-stacks \
     serverless-plugin-custom-roles \
     serverless-offline-sns \
-    serverless-s3-local@0.5.2 \
-    serverless-pseudo-parameters@2.5.0 \
+    serverless-s3-local \
+    serverless-pseudo-parameters \
     mocha \
     babel-cli
 
