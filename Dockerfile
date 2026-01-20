@@ -1,4 +1,4 @@
-FROM cimg/node:18.17.1
+FROM cimg/node:22.22.0
 MAINTAINER juvaly
 
 USER root
