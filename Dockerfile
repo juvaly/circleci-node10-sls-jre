@@ -6,6 +6,16 @@ USER root
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
+    apt-get install -y default-jre curl unzip && \
+    # 2. Download and install AWS CLI v2
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
+    unzip awscliv2.zip && \
+    ./aws/install && \
+    # 3. Cleanup to keep image small
+    rm -rf awscliv2.zip ./aws && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y \
     default-jre \
