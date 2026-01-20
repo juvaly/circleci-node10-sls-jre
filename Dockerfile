@@ -15,13 +15,6 @@ RUN apt-get update && \
     rm -rf awscliv2.zip ./aws && \
     rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install -y \
-    default-jre \
-    awscli \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
-
 RUN npm install -g serverless \ 
     serverless-offline \
     serverless-webpack \
