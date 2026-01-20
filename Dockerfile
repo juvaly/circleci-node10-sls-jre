@@ -6,12 +6,11 @@ USER root
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
-    apt-get autoremove -y && \
     apt-get upgrade -y && \
-    apt-get install -y default-jre
-
-RUN apt-get install -y python3-pip && \
-    pip3 install awscli
+    apt-get install -y \
+    default-jre \
+    awscli \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN npm install -g serverless \ 
     serverless-offline \
